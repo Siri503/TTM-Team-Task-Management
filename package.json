@@ -12,7 +12,8 @@
     "build": "npm --prefix client run build",
     "build-all": "npm install && npm --prefix backend install && npm --prefix client install && npm run build",
     "start": "npm --prefix backend start",
-    "start-prod": "npm --prefix backend start"
+    "start:prod": "npm run build && npm --prefix backend start",
+    "postinstall": "npm --prefix backend install && npm --prefix client install"
   },
   "dependencies": {
     "concurrently": "^7.0.0"

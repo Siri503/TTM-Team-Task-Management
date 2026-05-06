@@ -18,7 +18,7 @@ if (missingEnvVars.length > 0) {
 const app = express();
 const PORT = process.env.PORT || 5000;
 const MONGODB_URI = process.env.MONGODB_URI;
-const NODE_ENV = process.env.NODE_ENV || 'development';
+const NODE_ENV = process.env.NODE_ENV || 'production';
 const CORS_ORIGIN = process.env.CORS_ORIGIN || 'http://localhost:3000';
 
 // CORS configuration
@@ -53,7 +53,7 @@ app.use('/api', (req, res) => {
 
 // Serve React build in production
 if (NODE_ENV === 'production') {
-  const buildPath = path.join(__dirname, '..', 'client', 'build');
+  const buildPath = path.join(__dirname, '../client/build');
   app.use(express.static(buildPath));
   
   // Serve index.html for React Router
