@@ -1,0 +1,20 @@
+{
+  "name": "team-task-management",
+  "version": "1.0.0",
+  "description": "Full-stack Team Task Management Application",
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "scripts": {
+    "dev": "concurrently \"cd backend && npm run dev\" \"cd client && npm start\"",
+    "install-all": "npm install && npm --prefix backend install && npm --prefix client install",
+    "build": "npm --prefix client run build",
+    "build-all": "npm install && npm --prefix backend install && npm --prefix client install && npm run build",
+    "start": "npm --prefix backend start",
+    "start-prod": "npm --prefix backend start"
+  },
+  "dependencies": {
+    "concurrently": "^7.0.0"
+  }
+}
